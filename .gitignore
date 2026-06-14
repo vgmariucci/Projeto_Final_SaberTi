@@ -1,0 +1,22 @@
+# Dependências (caso utilize npm no futuro para ferramentas de build)
+node_modules/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações de IDE e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos de Log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
