@@ -1,0 +1,43 @@
+<header class="view-header">
+    <h2>Categorias de Produtos</h2>
+</header>
+<div class="grid-layout">
+    <div class="card">
+        <h3 id="form-title">Nova Categoria</h3>
+        <form id="form-categoria">
+            <input type="hidden" id="cat-id" value="">
+
+            <div class="form-group">
+                <label>Descrição da Categoria</label>
+                <input type="text" id="cat-descricao" placeholder="Ex: Ferramentas, Elétrica..." required>
+            </div>
+
+            <button type="submit" id="btn-submit-cat" class="btn btn-success">Salvar Categoria</button>
+            <button type="button" id="btn-cancel-edit" class="btn"
+                style="background-color: #64748b; color: white; margin-top: 10px; display: none;">
+                Cancelar Edição
+            </button>
+        </form>
+    </div>
+    <div class="card">
+        <h3>Categorias Cadastradas</h3>
+
+        <div class="form-group" style="margin-bottom: 15px;">
+            <input type="text" id="search-categoria" placeholder="🔍 Buscar por ID ou Descrição..."
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px;">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th style="text-align: right;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-categorias-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

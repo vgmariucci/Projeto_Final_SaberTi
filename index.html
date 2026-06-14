@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão e Orçamentos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <button class="hamburger" id="btn-hamburger" aria-label="Abrir menu">☰</button>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">Orc Studio</div>
+        <ul class="nav-links">
+            <li><button class="nav-btn active" data-target="clientes">Clientes</button></li>
+            <li><button class="nav-btn" data-target="produtos">Produtos</button></li>
+            <li><button class="nav-btn" data-target="categorias_produtos">Categorias de Produtos</button></li>
+            <li><button class="nav-btn" data-target="orcamentos">Orçamentos</button></li>
+            <li><button class="nav-btn" data-target="metricas">Métricas</button></li>
+        </ul>
+        <li><button class="nav-btn" data-target="usuarios">Usuários do Sistema</button></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper"
+        style="margin-left: var(--sidebar-width); display: flex; flex-direction: column; min-height: 100vh;">
+
+        <header class="topbar">
+            <div class="profile-container" id="profile-menu-trigger">
+                <div class="avatar" id="user-avatar">U</div>
+                <span class="username" id="user-display-name">Carregando...</span>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <button class="dropdown-item" id="btn-view-profile">👤 Meu Perfil</button>
+                    <hr>
+                    <button class="dropdown-item logout" id="btn-logout">🚪 Encerrar Sessão</button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" style="flex: 1; padding: 80px 20px 20px 20px;"></main>
+
+    </div>
+    <script type="module" src="js/router.js"></script>
+</body>
+
+</html>

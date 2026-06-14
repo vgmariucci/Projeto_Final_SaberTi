@@ -1,0 +1,75 @@
+<header class="view-header">
+    <h2>Métricas e Performance</h2>
+    <div style="display: flex; gap: 10px; align-items: center;">
+        <input type="date" id="metricas-data-inicio" class="input-control">
+        <span style="color: var(--text-muted)">até</span>
+        <input type="date" id="metricas-data-fim" class="input-control">
+    </div>
+</header>
+
+<div class="metrics-row">
+    
+    <div class="metric-card-custom" style="border-left: 4px solid #10b981;">
+        <div class="metric-main-block">
+            <h4>Orçamentos Válidos</h4>
+            <div class="metric-main-value" id="total-validos">0</div>
+        </div>
+        
+        <div class="metric-sub-indicators-box">
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Média</span>
+                <span class="sub-indicator-val" id="calc-media-val">R$ 0,00</span>
+            </div>
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Mínimo</span>
+                <span class="sub-indicator-val" id="calc-min-val">R$ 0,00</span>
+            </div>
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Máximo</span>
+                <span class="sub-indicator-val" id="calc-max-val">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="metric-card-custom" style="border-left: 4px solid #ef4444;">
+        <div class="metric-main-block">
+            <h4>Orçamentos Expirados</h4>
+            <div class="metric-main-value" id="total-expirados">0</div>
+        </div>
+        
+        <div class="metric-sub-indicators-box">
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Média</span>
+                <span class="sub-indicator-val" id="calc-media-exp">R$ 0,00</span>
+            </div>
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Mínimo</span>
+                <span class="sub-indicator-val" id="calc-min-exp">R$ 0,00</span>
+            </div>
+            <div class="sub-indicator-item">
+                <span class="sub-indicator-label">Máximo</span>
+                <span class="sub-indicator-val" id="calc-max-exp">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="charts-dashboard-grid">
+    <div class="chart-wrapper-compact">
+        <h4>Evolução de Orçamentos</h4>
+        <div class="canvas-container"><canvas id="chart-evolucao"></canvas></div>
+    </div>
+    <div class="chart-wrapper-compact">
+        <h4>Top Produtos Recorrentes</h4>
+        <div class="canvas-container"><canvas id="chart-produtos"></canvas></div>
+    </div>
+    <div class="chart-wrapper-compact">
+        <h4>Volume por Cliente</h4>
+        <div class="canvas-container"><canvas id="chart-clientes-qtd"></canvas></div>
+    </div>
+    <div class="chart-wrapper-compact">
+        <h4>Ticket Médio por Cliente</h4>
+        <div class="canvas-container"><canvas id="chart-clientes-valor"></canvas></div>
+    </div>
+</div>

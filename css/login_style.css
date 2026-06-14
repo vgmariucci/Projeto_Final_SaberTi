@@ -1,0 +1,95 @@
+/* Update the global and body styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Dark Futuristic Theme */
+    background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #16213e);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0e0e0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Adjust your container for the dark theme */
+.login-container {
+    background-color: rgba(25, 25, 45, 0.9); /* Semi-transparent dark bg */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    color: white;
+}
+
+/* Update labels and headings for visibility */
+h2 { color: #ffffff; margin-bottom: 16px; text-align: center; }
+.input-group label { color: #bbbbbb; }
+
+/* Keep your inputs and buttons visible against dark background */
+.input-group input {
+    background: #1a1a2e;
+    border: 1px solid #333;
+    color: white;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps the animation behind the form[cite: 3] */
+    top: 0;
+    left: 0;
+}
+
+.login-container {
+    background-color: rgba(25, 25, 45, 0.9);
+    backdrop-filter: blur(10px);
+    /* Increased padding and width */
+    padding: 50px; 
+    width: 50%;
+    max-width: 500px; /* Increased from 400px */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+h2 {
+    font-size: 2rem; /* Make the title bigger */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    padding: 12px; /* Bigger inputs */
+    font-size: 14px;
+}
+
+.button-group {
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px;
+    font-size: 14px;
+}

@@ -1,0 +1,132 @@
+<header class="view-header">
+    <h2>Orçamentos Emitidos</h2>
+</header>
+<div class="grid-layout">
+    <div class="card">
+        <h3 id="form-title-orcamento">Novo Orçamento</h3>
+        <form id="form-orcamento">
+            <input type="hidden" id="orc-id" value="">
+
+            <div class="form-group">
+                <label>Cliente</label>
+                <select id="orc-cliente" required>
+                    <option value="">Carregando clientes...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Data de Validade</label>
+                <input type="date" id="orc-validade" required>
+                <small id="orc-validade-error" style="color:#ef4444; font-size:12px; display:none;">
+                    ⚠️ A data de validade deve ser posterior à data de hoje.
+                </small>
+            </div>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed var(--border-color);">
+
+            <h4>Adicionar Itens</h4>
+            <div class="form-group" style="margin-top:10px;">
+                <label>Escolha o Produto</label>
+                <select id="orc-item-produto">
+                    <option value="">Carregando produtos...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="number" id="orc-item-qtd" min="1" value="1">
+            </div>
+            <button type="button" id="btn-add-item" class="btn"
+                style="background-color:#334155; color:white; margin-bottom:15px;">
+                + Adicionar Item ao Orçamento
+            </button>
+
+            <div class="table-container" style="margin-bottom: 15px;">
+                <table style="font-size: 13px;">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Qtd</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-itens-provisorios"></tbody>
+                </table>
+            </div>
+            <div class="form-group" style="text-align: right; font-size: 18px;">
+                <strong>Valor Total: R$ <span id="orc-total-display">0.00</span></strong>
+            </div>
+
+            <button type="submit" id="btn-submit-orc" class="btn btn-success">Finalizar e Emitir Orçamento</button>
+            <button type="button" id="btn-discard-orc" class="btn"
+                style="background-color:#ef4444; color:white; margin-top:10px; display:none;">
+                Descartar Modificações
+            </button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Histórico de Propostas</h3>
+
+        <div class="export-bar"
+            style="display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="margin: 0; display: flex; flex-direction: column;">
+                    <label style="font-size: 12px; font-weight: bold; margin-bottom: 4px; color: #475569;">Data
+                        Inicial</label>
+                    <input type="date" id="export-start-date"
+                        style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin: 0; display: flex; flex-direction: column;">
+                    <label style="font-size: 12px; font-weight: bold; margin-bottom: 4px; color: #475569;">Data
+                        Final</label>
+                    <input type="date" id="export-end-date"
+                        style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+            </div>
+
+            <div
+                style="display: flex; gap: 10px; align-items: center; border-left: 2px solid #cbd5e1; padding-left: 20px;">
+                <input type="text" id="search-orcamento-buscar" placeholder="Buscar..."
+                    style="padding: 8px; width: 180px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                <div style="font-size: 11px; display: flex; flex-direction: column; gap: 4px; color: #475569;">
+                    <label style="display: flex; align-items: center; gap: 4px;"><input type="checkbox" id="check-id"
+                            class="search-filter"> ID</label>
+                    <label style="display: flex; align-items: center; gap: 4px;"><input type="checkbox" id="check-nome"
+                            class="search-filter"> Nome</label>
+                </div>
+
+                <button type="button" id="btn-search-trigger" class="btn" disabled
+                    style="background: #334155; color: white; padding: 8px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; height: 35px;">
+                    BUSCAR
+                </button>
+
+                <button type="button" id="btn-export-period" class="btn-export-single" title="Exportar período para Excel"
+                    style="background:#10b981; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:12px;" title="Exportar para Excel">
+                    <i data-lucide="download" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;">
+            <input type="text" id="search-orcamento" placeholder="🔍 Buscar..." style="flex-grow: 1; padding: 8px;">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Cliente</th>
+                        <th>Emissão</th>
+                        <th>Validade</th>
+                        <th>Valor Total (R$)</th>
+                        <th>Status</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-orcamentos-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

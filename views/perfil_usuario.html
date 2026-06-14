@@ -1,0 +1,50 @@
+<header class="view-header">
+    <h2>Visão Geral do Usuário & Sistema</h2>
+</header>
+
+<div class="grid-layout">
+    <div class="card">
+        <h3>Meus Dados Operacionais</h3>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+            <div>
+                <label style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Nome Identificado</label>
+                <p id="perf-nome" style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-top: 2px;">-</p>
+            </div>
+            <div>
+                <label style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">E-mail de Acesso</label>
+                <p id="perf-email" style="font-size: 14px; color: var(--text-primary); margin-top: 2px;">-</p>
+            </div>
+            <div>
+                <label style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">ID de Instância Única (UUID)</label>
+                <p id="perf-uuid" style="font-family: monospace; font-size: 11px; background: #f1f5f9; padding: 6px; border-radius: 4px; margin-top: 4px; word-break: break-all;">-</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+            <h3>Auditoria & Conformidade</h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-top: 8px;">
+                Esta conta possui privilégios operacionais na plataforma <strong>Orc Studio</strong>. Todas as interações comerciais, precificações corporativas e mutações em registros de controle de orçamentos são auditadas eletronicamente sob conformidade com os Termos de Serviço vigentes.
+            </p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 15px;">
+            <h4 style="font-size: 13px; color: var(--text-primary); margin-bottom: 10px;">Status da Infraestrutura</h4>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                <span class="status-indicator"></span> Conexão ativa com microsserviços Supabase
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="font-size: 11px; color: var(--text-muted);">&copy; 2026 Orc Studio Indústria e Tecnologia Ltda.</p>
+                <a href="#" style="font-size: 11px; color: var(--brand); text-decoration: none;">Políticas de Privacidade</a>
+            </div>
+            <div class="footer-meta" style="margin: 0;">
+                <span class="meta-badge env-badge">Produção</span>
+                <span class="meta-badge version-badge">v2.4.2-stable</span>
+            </div>
+        </div>
+    </div>
+</div>

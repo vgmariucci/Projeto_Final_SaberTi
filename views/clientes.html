@@ -1,0 +1,52 @@
+<header class="view-header">
+    <h2>Gerenciamento de Clientes</h2>
+</header>
+<div class="grid-layout">
+    <div class="card">
+        <h3 id="form-title-cliente">Novo Cliente</h3>
+        <form id="form-cliente">
+            <input type="hidden" id="cli-id" value="">
+
+            <div class="form-group">
+                <label>Tipo de Cliente</label>
+                <select id="cli-tipo" required>
+                    <option value="F">Pessoa Física (F)</option>
+                    <option value="J">Pessoa Jurídica (J)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>CPF / CNPJ</label>
+                <input type="text" id="cli-documento" placeholder="000.000.000-00" required>
+            </div>
+            <div class="form-group">
+                <label>Nome do Cliente</label>
+                <input type="text" id="cli-nome" placeholder="Nome Completo ou Razão Social" required>
+            </div>
+            <button type="submit" id="btn-submit-cli" class="btn btn-success">Cadastrar Cliente</button>
+            <button type="button" id="btn-cancel-cli" class="btn"
+                style="background-color: #64748b; color: white; margin-top: 10px; display: none;">Cancelar
+                Edição</button>
+        </form>
+    </div>
+    <div class="card">
+        <h3>Lista de Clientes</h3>
+        <div class="form-group" style="margin-bottom: 15px;">
+            <input type="text" id="search-cliente" placeholder="🔍 Buscar por ID ou CPF/CNPJ..."
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px;">
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Nome</th>
+                        <th style="text-align: right;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-clientes-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

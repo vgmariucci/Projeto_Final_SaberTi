@@ -1,0 +1,72 @@
+<header class="view-header">
+    <h2>Catálogo de Produtos</h2>
+</header>
+<div class="grid-layout">
+    <div class="card">
+        <h3 id="form-title-produto">Novo Produto</h3>
+        <form id="form-produto">
+            <input type="hidden" id="prod-id" value="">
+
+            <div class="form-group">
+                <label>Categoria</label>
+                <select id="prod-categoria" required></select>
+            </div>
+            <div class="form-group">
+                <label>Descrição do Produto</label>
+                <input type="text" id="prod-descricao" required>
+            </div>
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea id="prod-obs" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Valor de Venda (R$)</label>
+                <input type="number" step="0.01" id="prod-valor" required>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <select id="prod-status" required>
+                    <option value="ATIVO">Ativo</option>
+                </select>
+            </div>
+            <button type="submit" id="btn-submit-prod" class="btn btn-success">Cadastrar Produto</button>
+
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button type="button" id="btn-cancel-prod" class="btn"
+                    style="background-color: #64748b; color: white; display: none; flex: 1;">
+                    Cancelar Edição
+                </button>
+
+                <button type="button" id="btn-delete-prod" class="btn"
+                    style="background-color: #ef4444; color: white; display: none; flex: 1;"
+                    title="Apenas produtos INATIVOS e sem vínculos podem ser excluídos.">
+                    Excluir Produto
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card">
+        <h3>Produtos em Estoque</h3>
+
+        <div class="form-group" style="margin-bottom: 15px;">
+            <input type="text" id="search-produto" placeholder="🔍 Buscar por ID, Descrição ou Categoria..."
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px;">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                        <th style="text-align: right;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-produtos-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
